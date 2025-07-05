@@ -1,9 +1,11 @@
 ## API documentation
 
-### 📥 A. **Add New Employee** – `POST /api/employees`
+###  A. **Add New Employee** – `POST /api/employees`
 
 **Method:** `POST`
+
 **URL:** `http://localhost:5000/api/employees`
+
 **Body → raw → JSON**
 
 ```json
@@ -39,6 +41,7 @@
 ###  B. **Get All Employees** – `GET /api/employees`
 
 **Method:** `GET`
+
 **URL:** `http://localhost:5000/api/employees`
 
 **Response:**
@@ -88,7 +91,7 @@
             "employmentType": "Part-time",
             "createdAt": "2025-07-05T05:19:06.711Z",
             "updatedAt": "2025-07-05T05:19:06.711Z",
-            "__v": 0
+            "__v": 0 
         },
         {
             "_id": "6868b5d3506b5181aa6db546",
@@ -108,7 +111,9 @@
  
 
 Optional: Test with search query:
-**URL::** : `http://localhost:3000/api/v1/employees?search=engineer`
+
+**URL:** : `http://localhost:3000/api/v1/employees?search=engineer`
+
 **Response:**
 ```json
 {
@@ -161,7 +166,9 @@ Optional: Test with search query:
 ###  D. **Update Employee** – `PUT /api/employees/:id`
 
 **Method:** `PUT`
+
 **URL:** `http://localhost:5000/api/employees/<id>`
+
 **Body → raw → JSON**
 
 ```json
@@ -197,6 +204,7 @@ Optional: Test with search query:
 ###  E. **Delete Employee** – `DELETE /api/employees/:id`
 
 **Method:** `DELETE`
+
 **URL:** `http://localhost:5000/api/employees/<id>`
 
 **Response :**
