@@ -1,6 +1,7 @@
 import { Employee } from "../models/employee.models.js";
 import { employeeValidationSchema } from "../schema/employee.validation.js";
 
+// Get all employees with optional search
 export const getAllEmployees = async(req, res)=>{
     try{
         const search = req.query.search || '';
@@ -26,7 +27,32 @@ export const getAllEmployees = async(req, res)=>{
     }
 }
 
-
+// get all employees with pagination
+export const getAllEmployeesWithPagination = async(req, res) => {
+    try{
+        const { page = 1, limit = 10 } = req.query;
+        const skip = (page - 1) * limit;
+        const employees = await Employee.find()
+            .skip(skip)
+            .limit(limit);
+        const totalEmployees = await Employee.countDocuments();
+        res.status(200).json({
+            message: 'Employees fetched successfully',
+            data: employees,
+            success: true,
+            total: totalEmployees,
+            page: parseInt(page),
+            totalPages: Math.ceil(totalEmployees / limit)
+        });
+    }catch(err){
+        console.error(err);
+        res.status(500).json({
+            message: 'Internal server error',
+            success: false
+        });
+    }
+}
+// Create a new employee
 export const createEmployee = async(req,res) => {
     try{
         const {error} = employeeValidationSchema.validate(req.body);

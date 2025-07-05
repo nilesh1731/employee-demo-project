@@ -1,11 +1,14 @@
 <template>
-  <Form @submit="handleSubmit" v-slot="{ errors }">
-    <v-card>
-      <v-card-title class="text-h5">
-        {{ isEdit ? $t('form.editTitle') : $t('form.addTitle') }}
-      </v-card-title>
-      <v-card-text>
-        <v-container>
+  <v-container class="d-flex align-center justify-center fill-height" 
+  fluid
+  
+  >
+    <Form @submit="handleSubmit" v-slot="{ errors }">
+      <v-card class="pa-4 max-w-lg"  >
+        <v-card-title class="text-h5">
+          {{ isEdit ? $t('form.editTitle') : $t('form.addTitle') }}
+        </v-card-title>
+        <v-card-text>
           <Field
             v-model="formData.fullName"
             name="fullName"
@@ -68,7 +71,11 @@
             rules="required"
             v-slot="{ field }"
           >
-            <v-radio-group v-bind="field" :label="$t('form.employmentType')" inline>
+            <v-radio-group
+              v-bind="field"
+              :label="$t('form.employmentType')"
+              inline
+            >
               <v-radio
                 :label="$t('form.fullTime')"
                 value="Full-time"
@@ -81,25 +88,26 @@
               />
             </v-radio-group>
           </Field>
-        </v-container>
-      </v-card-text>
-      <v-card-actions>
-        <v-spacer></v-spacer>
-        <v-btn color="blue-darken-1" variant="text" @click="cancel">
-          {{ $t('form.cancel') }}
-        </v-btn>
-        <v-btn
-          color="blue-darken-1"
-          variant="text"
-          type="submit"
-          :disabled="Object.keys(errors).length > 0"
-        >
-          {{ $t('form.submit') }}
-        </v-btn>
-      </v-card-actions>
-    </v-card>
-  </Form>
+        </v-card-text>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn color="blue-darken-1" variant="text" @click="cancel">
+            {{ $t('form.cancel') }}
+          </v-btn>
+          <v-btn
+            color="blue-darken-1"
+            variant="text"
+            type="submit"
+            :disabled="Object.keys(errors).length > 0"
+          >
+            {{ $t('form.submit') }}
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </Form>
+  </v-container>
 </template>
+
 
 <script setup>
 import { Form, Field } from 'vee-validate'
@@ -161,3 +169,9 @@ function cancel() {
 }
 </script>
 
+<style scoped>
+  .fill-height {
+    height: 100vh;
+    width: 100%;
+  }
+</style>

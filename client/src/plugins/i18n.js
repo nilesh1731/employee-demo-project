@@ -4,7 +4,7 @@ import { createI18n } from 'vue-i18n'
 const messages = {
   en: {
     appTitle: "Employee Directory",
-    footerText: "© 2023 Employee Management System",
+    footerText: "© 2025 Employee Management System",
     nav: {
       home: "Dashboard",
       addEmployee: "Add Employee"
@@ -38,7 +38,7 @@ const messages = {
   },
   es: {
     appTitle: "Directorio de Empleados",
-    footerText: "© 2023 Sistema de Gestión de Empleados",
+    footerText: "© 2025 Sistema de Gestión de Empleados",
     nav: {
       home: "Panel",
       addEmployee: "Agregar Empleado"

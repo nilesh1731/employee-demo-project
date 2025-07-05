@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL: 'http://localhost:5000/api', // Your backend API base URL
+  baseURL: 'http://localhost:3000/api/v1', 
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json'
@@ -11,11 +11,6 @@ const api = axios.create({
 // Request interceptor
 api.interceptors.request.use(
   config => {
-    // You can add auth tokens here if needed
-    // const token = localStorage.getItem('token')
-    // if (token) {
-    //   config.headers.Authorization = `Bearer ${token}`
-    // }
     return config
   },
   error => {

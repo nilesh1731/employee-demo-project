@@ -28,6 +28,20 @@ export const useEmployeeStore = defineStore('employee', () => {
     }
   }
 
+  async function fetchPaginatedEmployees(page = 1, limit = 10) {
+    try {
+      loading.value = true
+      const response = await api.get(`/employees/pagination?page=${page}&limit=${limit}`)
+      return response.data
+    } catch (err) {
+      error.value = err.message
+      throw err
+    } finally {
+      loading.value = false
+    }
+  }
+
+
   async function fetchEmployee(id) {
     try {
       loading.value = true
@@ -108,6 +122,7 @@ export const useEmployeeStore = defineStore('employee', () => {
     fetchEmployee,
     addEmployee,
     updateEmployee,
-    deleteEmployee
+    deleteEmployee,
+    fetchPaginatedEmployees
   }
 })

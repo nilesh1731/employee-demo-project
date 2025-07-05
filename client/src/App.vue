@@ -20,9 +20,8 @@
           :to="item.to"
           link
         >
-          <v-list-item-icon>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-icon>
+         <v-icon class="me-2">{{ item.icon }}</v-icon>
+
           <v-list-item-title>{{ $t(item.title) }}</v-list-item-title>
         </v-list-item>
       </v-list>
