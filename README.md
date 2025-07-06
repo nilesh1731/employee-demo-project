@@ -73,6 +73,7 @@ http://localhost:3000/api/v1
 | DELETE | `/api/v1/employees/:id` | Delete an employee    |
 
 
+
 ### 🛠 Technologies Used
 
 * Node.js
@@ -334,6 +335,7 @@ Optional: Test with search query:
 - **Edit Employees**: Pre-filled form with update capabilities
 - **View Employees**: Responsive data table with pagination
 - **Delete Employees**: With confirmation dialog
+- **Search Employees* : we can search employee with employee name 
 
 ### 2. Technical Implementation
 - **Centralized State**: Pinia store for all employee data
