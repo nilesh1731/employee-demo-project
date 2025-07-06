@@ -1,6 +1,84 @@
 ## Table of Contents
+- [Backend setup](#backend-setup--employee-management-system)
 - [API Documentation](#api-documentation)
 - [Frontend Implementation](#frontend)
+
+
+
+##  Backend Setup – Employee Management System
+
+### Getting Started
+
+#### 1. **Clone the Repository**
+
+```bash
+git clone https://github.com/nilesh1731/employee-demo-project.git
+cd server
+```
+
+---
+
+#### 2. **Install Dependencies**
+
+```bash
+npm install
+```
+
+---
+
+#### 3. **Create a `.env` File**
+
+Create a `.env` file in the root directory and add the following:
+
+```env
+PORT=3000
+MONGODB_URI=your-mongodb-connection-uri
+```
+
+> Replace `mongodb-connection-uri` with your actual MongoDB connection string.
+
+---
+
+#### 4. **Start the Server**
+
+* **In development (with hot reload using Nodemon):**
+
+```bash
+npm run dev
+```
+---
+
+###  API Base URL
+
+```
+http://localhost:3000/api/v1
+```
+
+---
+
+###  Sample Endpoint
+
+| Method | Endpoint             | Description           |
+| ------ | -------------------- | --------------------- |
+| POST   | `/api/v1/employees`     | Add a new employee    |
+| GET    | `/api/v1/employees`     | Get all employees     |
+| GET    | `/api/v1/employees/:id` | Get an employee by ID |
+| PUT    | `/api/v1/employees/:id` | Update an employee    |
+| DELETE | `/api/v1/employees/:id` | Delete an employee    |
+
+
+### 🛠 Technologies Used
+
+* Node.js
+* Express.js
+* MongoDB & Mongoose
+* Joi (for validation)
+* Dotenv
+* CORS
+
+
+
+
 
 ## API documentation
 

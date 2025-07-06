@@ -3,7 +3,7 @@ import DashboardView from '@/views/DashboardView.vue'
 import AddEmployeeView from '@/views/AddEmployeeView.vue'
 import EditEmployeeView from '@/views/EditEmployeeView.vue'
 
-console.log('Router initialized with base URL:', import.meta.env.BASE_URL)
+console.log('Router  with base URL:', import.meta.env.BASE_URL)
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -35,7 +35,7 @@ const router = createRouter({
   ]
 })
 
-// Update page title based on route meta
+
 router.beforeEach((to, from, next) => {
   document.title = to.meta.title || 'Employee Directory'
   next()

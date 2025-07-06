@@ -1,4 +1,3 @@
-// src/plugins/i18n.js
 import { createI18n } from 'vue-i18n'
 
 const messages = {
@@ -73,7 +72,7 @@ const messages = {
 }
 
 const i18n = createI18n({
-  legacy: false,  // Use Composition API mode
+  legacy: false,  //  Composition API mode
   locale: 'en',   // Default language is English
   fallbackLocale: 'en', // If translation is not available in the selected language, fallback to English
   messages // All language strings
