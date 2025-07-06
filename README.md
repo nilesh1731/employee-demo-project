@@ -1,3 +1,7 @@
+## Table of Contents
+- [API Documentation](#api-documentation)
+- [Frontend Implementation](#frontend)
+
 ## API documentation
 
 ###  A. **Add New Employee** – `POST /api/employees`
@@ -228,7 +232,98 @@ Optional: Test with search query:
 
 ```
 
+## Frontend 
+
+### Technical Stack
+- **Framework**: Vue 3 (Composition API)
+- **UI Library**: Vuetify 3
+- **State Management**: Pinia
+- **Routing**: Vue Router
+- **Internationalization**: Vue I18n
+- **Form Validation**: Vee-Validate
+- **HTTP Client**: Axios
+
+## Key Features
+
+### 1. Employee Management
+- **Add Employees**: Centered form with real-time validation
+- **Edit Employees**: Pre-filled form with update capabilities
+- **View Employees**: Responsive data table with pagination
+- **Delete Employees**: With confirmation dialog
+
+### 2. Technical Implementation
+- **Centralized State**: Pinia store for all employee data
+- **Form Validation**: Comprehensive field validation
+- **Error Handling**: Graceful error states and notifications
+- **Loading States**: Visual feedback during operations
+- **Multi-language Support**: English/Spanish toggle
+
+### 3. UI/UX Features
+- Responsive design (mobile/desktop)
+- Dark/light mode toggle
+- Accessible components
+- Animated transitions
+
+## Component Structure
+
+### Core Views
+| View | Path | Description |
+|------|------|-------------|
+| Dashboard | `/` | Main view with employee stats and table |
+| Add Employee | `/add` | Form for new employee creation |
+| Edit Employee | `/edit/:id` | Form for employee updates |
 
 
+
+
+## Installation & Setup
+
+### 1. Prerequisites
+- Node.js v16+
+- npm v8+
+
+### 2. Project Setup
+```bash
+git clone `https://github.com/nilesh1731/employee-demo-project.git`
+```
+```bash
+cd client
+```
+
+### 3. Development
+```bash
+# Run dev server
+npm run dev
+```
+
+
+
+
+
+1. **VS Code Extensions**:
+   - Volar (Vue 3 support)
+   - ESLint
+   - Prettier
+   - Vuetify VSCode
+
+2. **Browser Tools**:
+   - Vue Devtools
+   - Pinia Devtools
+
+## API Integration
+
+The frontend expects a REST API with these endpoints:
+
+```javascript
+// Base URL: /api/v1/employees
+{
+  GET '/',          // List all employees
+  GET '/:id',       // Get single employee
+  POST '/',         // Create employee
+  PUT '/:id',       // Update employee
+  DELETE '/:id',    // Remove employee
+  GET '/pagination' // Paginated results
+}
+```
 
 

@@ -22,7 +22,15 @@ export default createVuetify({
           primary: '#1867C0',
           secondary: '#5CBBF6',
           green: '#4CAF50',
-          orange: '#FF9800',
+          orange  : '#FF9800',
+        }
+      },
+      dark:{
+        colors: {
+          primary: '#1867C0',
+          secondary: '#5CBBF6',
+          green: '#4CAF50',
+          orange  : '#FF9800',
         }
       }
     }

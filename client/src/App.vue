@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-app-bar app color="primary" dark>
-      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+     
       <v-toolbar-title>{{ $t('appTitle') }}</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn icon @click="toggleTheme">
@@ -12,26 +12,10 @@
       </v-btn>
     </v-app-bar>
 
-    <v-navigation-drawer v-model="drawer" app temporary>
-      <v-list nav dense>
-        <v-list-item
-          v-for="item in navItems"
-          :key="item.title"
-          :to="item.to"
-          link
-        >
-         <v-icon class="me-2">{{ item.icon }}</v-icon>
-
-          <v-list-item-title>{{ $t(item.title) }}</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
+    
 
     <v-main>
       <router-view v-slot="{ Component }">
-        <v-fade-transition mode="out-in">
-          <component :is="Component" />
-        </v-fade-transition>
       </router-view>
     </v-main>
 
@@ -43,7 +27,7 @@
 
 <script>
 import { ref, computed } from 'vue'
-import { useTheme } from 'vuetify/lib/framework.mjs'
+import { useTheme } from 'vuetify'
 import { useI18n } from 'vue-i18n'
 
 export default {
@@ -51,6 +35,10 @@ export default {
     const { locale } = useI18n()
     const theme = useTheme()
     const drawer = ref(false)
+
+   console.log(`current theme: ${theme.global.current.value.name}`);
+   
+    
 
     const navItems = [
       { title: 'nav.home', icon: 'mdi-view-dashboard', to: '/' },
@@ -80,4 +68,5 @@ export default {
   }
 }
 </script>
+
 
