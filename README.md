@@ -5,6 +5,12 @@
 
 
 ## Screen shot of the project
+![image](https://github.com/user-attachments/assets/59515b27-f003-47e3-a3a3-7dd6bce101b3)
+![image](https://github.com/user-attachments/assets/a4d478b2-e3bf-47e0-a4f3-7fd59d235fb4)
+![image](https://github.com/user-attachments/assets/2705e6ac-716d-4ecc-9936-e215813bee5f)
+
+
+
 ##  Backend Setup – Employee Management System
 
 ### Getting Started
