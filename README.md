@@ -4,7 +4,7 @@
 - [Frontend Implementation](#frontend)
 
 
-
+## Screen shot of the project
 ##  Backend Setup – Employee Management System
 
 ### Getting Started
