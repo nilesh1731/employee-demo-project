@@ -1,111 +1,113 @@
 <template>
-  <v-container class="d-flex align-center justify-center fill-height" 
-  fluid
   
-  >
-    <Form @submit="handleSubmit" v-slot="{ errors }">
-      <v-card class="pa-4 max-w-lg"  >
-        <v-card-title class="text-h5">
-          {{ isEdit ? $t('form.editTitle') : $t('form.addTitle') }}
-        </v-card-title>
-        <v-card-text>
-          <Field
-            v-model="formData.fullName"
-            name="fullName"
-            :rules="validateName"
-            v-slot="{ field, errors: fieldErrors }"
-          >
-            <v-text-field
-              v-bind="field"
-              :label="$t('form.fullName')"
-              :error-messages="fieldErrors"
-              required
-            />
-          </Field>
+    <v-row class = 'd-flex align-center justify-center '>
+     <v-col cols="12" sm="10" md="8" lg="8" >
+        <Form @submit="handleSubmit" v-slot="{ errors }">
+          <v-card class="mx-auto"
+           style="max-height: 100vh; overflow-y: auto;">
+            <v-card-title class="text-h3">
+              {{ isEdit ? $t('form.editTitle') : $t('form.addTitle') }}
+            </v-card-title>
+            <v-card-text>
+              <Field
+                v-model="formData.fullName"
+                name="fullName"
+                :rules="validateName"
+                v-slot="{ field, errors: fieldErrors }"
+              >
+                <v-text-field
+                  v-bind="field"
+                  :label="$t('form.fullName')"
+                  :error-messages="fieldErrors"
+                  required
+                />
+              </Field>
 
-          <Field
-            v-model="formData.email"
-            name="email"
-            rules="required|email"
-            v-slot="{ field, errors: fieldErrors }"
-          >
-            <v-text-field
-              v-bind="field"
-              :label="$t('form.email')"
-              :error-messages="fieldErrors"
-              required
-            />
-          </Field>
+              <Field
+                v-model="formData.email"
+                name="email"
+                rules="required|email"
+                v-slot="{ field, errors: fieldErrors }"
+              >
+                <v-text-field
+                  v-bind="field"
+                  :label="$t('form.email')"
+                  :error-messages="fieldErrors"
+                  required
+                />
+              </Field>
 
-          <Field
-            v-model="formData.designation"
-            name="designation"
-            rules="required"
-            v-slot="{ field, errors: fieldErrors }"
-          >
-            <v-text-field
-              v-bind="field"
-              :label="$t('form.designation')"
-              :error-messages="fieldErrors"
-              required
-            />
-          </Field>
+              <Field
+                v-model="formData.designation"
+                name="designation"
+                rules="required"
+                v-slot="{ field, errors: fieldErrors }"
+              >
+                <v-text-field
+                  v-bind="field"
+                  :label="$t('form.designation')"
+                  :error-messages="fieldErrors"
+                  required
+                />
+              </Field>
 
-          <Field
-            v-model="formData.phoneNumber"
-            name="phoneNumber"
-            :rules="validatePhone"
-            v-slot="{ field, errors: fieldErrors }"
-          >
-            <v-text-field
-              v-bind="field"
-              :label="$t('form.phoneNumber')"
-              :error-messages="fieldErrors"
-              required
-            />
-          </Field>
+              <Field
+                v-model="formData.phoneNumber"
+                name="phoneNumber"
+                :rules="validatePhone"
+                v-slot="{ field, errors: fieldErrors }"
+              >
+                <v-text-field
+                  v-bind="field"
+                  :label="$t('form.phoneNumber')"
+                  :error-messages="fieldErrors"
+                  required
+                />
+              </Field>
 
-          <Field
-            v-model="formData.employmentType"
-            name="employmentType"
-            rules="required"
-            v-slot="{ field }"
-          >
-            <v-radio-group
-              v-bind="field"
-              :label="$t('form.employmentType')"
-              inline
-            >
-              <v-radio
-                :label="$t('form.fullTime')"
-                value="Full-time"
-                color="primary"
-              />
-              <v-radio
-                :label="$t('form.partTime')"
-                value="Part-time"
-                color="secondary"
-              />
-            </v-radio-group>
-          </Field>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn color="blue-darken-1" variant="text" @click="cancel">
-            {{ $t('form.cancel') }}
-          </v-btn>
-          <v-btn
-            color="blue-darken-1"
-            variant="text"
-            type="submit"
-            :disabled="Object.keys(errors).length > 0"
-          >
-            {{ $t('form.submit') }}
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </Form>
-  </v-container>
+              <Field
+                v-model="formData.employmentType"
+                name="employmentType"
+                rules="required"
+                v-slot="{ field }"
+              >
+                <v-radio-group
+                  v-bind="field"
+                  :label="$t('form.employmentType')"
+                  inline
+                >
+                  <v-radio
+                    :label="$t('form.fullTime')"
+                    value="Full-time"
+                    color="primary"
+                  />
+                  <v-radio
+                    :label="$t('form.partTime')"
+                    value="Part-time"
+                    color="secondary"
+                  />
+                </v-radio-group>
+              </Field>
+            </v-card-text>
+            <v-card-actions>
+              <v-spacer></v-spacer>
+              <v-btn color="blue-darken-1" variant="text" @click="cancel">
+                {{ $t('form.cancel') }}
+              </v-btn>
+              <v-btn
+                color="blue-darken-1"
+                variant="text"
+                type="submit"
+                :disabled="Object.keys(errors).length > 0"
+              >
+                {{ $t('form.submit') }}
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </Form>
+      </v-col>
+    </v-row>
+
 </template>
 
 

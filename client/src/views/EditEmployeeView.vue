@@ -1,10 +1,4 @@
-<template>
-  
-    <v-row justify="center">
-      <v-col cols="20" md="10" lg="20">
-        <v-card v-if="employee" class="pa-6">
-          
-          
+<template>  
           <employee-form
             :employee="employee"
             :is-edit="true"
@@ -12,25 +6,6 @@
             @cancel="handleCancel"
             :loading="employeeStore.loading"
           />
-          
-          <v-alert
-            v-if="errorMessage"
-            type="error"
-            class="mt-4"
-          >
-            {{ errorMessage }}
-          </v-alert>
-        </v-card>
-        
-        <v-progress-circular
-          v-else
-          indeterminate
-          color="primary"
-          size="64"
-          class="ma-12"
-        ></v-progress-circular>
-      </v-col>
-    </v-row>
   
 </template>
 

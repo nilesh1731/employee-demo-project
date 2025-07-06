@@ -61,9 +61,10 @@ export default {
       theme.global.current.value.dark ? 'mdi-weather-sunny' : 'mdi-weather-night'
     )
 
-    function toggleTheme() {
-      theme.global.name.value = theme.global.current.value.dark ? 'light' : 'dark'
-    }
+   function toggleTheme() {
+  const newTheme = theme.global.current.value.dark ? 'light' : 'dark';
+  theme.change(newTheme); 
+}
 
     function toggleLocale() {
       locale.value = locale.value === 'en' ? 'es' : 'en'

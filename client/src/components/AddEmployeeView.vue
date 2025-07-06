@@ -1,7 +1,7 @@
 <template>
-  <v-container>
-    <v-row justify="center">
-      <v-col cols="12" md="8" lg="6">
+  <v-container class="fill-height" fluid>
+    <v-row justify="center" align="center" class="fill-height">
+      <v-col cols="12" sm="8" md="6" lg="4">
         <employee-form
           @submit="handleSubmit"
           @cancel="handleCancel"
@@ -28,3 +28,4 @@ function handleCancel() {
   router.push({ name: 'dashboard' })
 }
 </script>
+

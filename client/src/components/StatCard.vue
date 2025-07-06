@@ -1,11 +1,13 @@
 <template>
-  <v-card :color="color" dark>
+  <v-card  class="text-white">
+ 
     <v-card-text>
       <div class="d-flex align-center">
-        <v-icon size="48" class="mr-4">{{ icon }}</v-icon>
+        <v-icon size="48" class="mr-4" :color="color"  >{{ icon }}</v-icon>
         <div>
+          
           <div class="text-h6">{{ title }}</div>
-          <div class="text-h4 font-weight-bold">{{ value }}</div>
+          <div class="text-h4 font-weight-bold" :color="color">{{ value }}</div>
         </div>
       </div>
     </v-card-text>
