@@ -1,7 +1,7 @@
 import express from 'express';
 import mongoose  from 'mongoose';
 
-
+// connect to MongoDB
 export const connectDB = async () => {
     try {
         await mongoose.connect(process.env.MONGODB_URI).then(()=>{
